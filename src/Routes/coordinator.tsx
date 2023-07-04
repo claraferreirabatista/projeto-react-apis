@@ -4,14 +4,14 @@ export const goToHomePage = (navigate:NavigateFunction) => {
   navigate("/");
 };
 
-export const goToNextPage = (navigate:NavigateFunction, pageNumber: number) => {
+export const goToNumberPage = (navigate:NavigateFunction, pageNumber: number) => {
   navigate(`/page/${pageNumber}`);
 };
 
-export const goToPokedex = (navigate:NavigateFunction) => {
+export const goToPokedexPage = (navigate:NavigateFunction) => {
   navigate("/pokedex");
 };
 
-export const goToPokemonDetails = (navigate:NavigateFunction, pokemon: string) => {
+export const goToPokemonDetailsPage = (navigate:NavigateFunction, pokemon: string) => {
   navigate(`/pokemon/${pokemon}`);
 };
