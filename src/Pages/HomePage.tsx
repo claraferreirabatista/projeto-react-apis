@@ -1,28 +1,26 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import {
   goToPokedex,
   goToNextPage,
   goToPokemonDetails,
 } from "../Routes/coordinator";
 
-export const HomePage = () => {
-  const navigate = useNavigate();
+export const HomePage: React.FC = () => {
+  const navigate: NavigateFunction = useNavigate();
 
-  const [pagination, setPagination] = useState(1);
+  const [pagination, setPagination] = useState<number>(1);
+
+  const handleNextPageClick = () => {
+    setPagination((prevPagination) => prevPagination + 1);
+    goToNextPage(navigate, pagination);
+  };
 
   return (
     <div>
       <h1>HomePage</h1>
       <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-      <button
-        onClick={() => {
-          setPagination((pagination) => pagination + 1);
-          goToNextPage(navigate, pagination);
-        }}
-      >
-        Próxima Página
-      </button>
+      <button onClick={handleNextPageClick}>Próxima Página</button>
       <button onClick={() => goToPokemonDetails(navigate, "pikachu")}>
         Detalhes do Pokemon
       </button>
