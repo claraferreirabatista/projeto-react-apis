@@ -6,12 +6,12 @@ import "@fontsource/poppins/700.css";
 
 function App() {
   return (
-    <div className="App">
+    <>
         <ChakraProvider resetCSS theme={theme}>
       <h1> Hello, World!</h1>
       <Router />
       </ChakraProvider>
-    </div>
+    </>
   );
 }
 

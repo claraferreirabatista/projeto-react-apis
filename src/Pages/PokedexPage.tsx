@@ -1,5 +1,9 @@
+import { Header } from "../Components/Header";
 export const PokedexPage = () => {
-    return <div>
-        <h1>Pokemons</h1>
-    </div>;
+    return (
+        <div>
+          <Header />
+          Pokedex em breve.
+        </div>
+      );
   };
